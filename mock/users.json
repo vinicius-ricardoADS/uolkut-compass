@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1,
+        "email": "vinicius@gmail.com",
+        "password": "1234",
+        "date_birth": "2002-04-03",
+        "profession": "Programmer",
+        "country": "Brazil",
+        "city": "São Paulo",
+        "relationship": "Solteiro"
+    }
+]
