@@ -196,20 +196,6 @@ ul {
 }
 
 @media screen and (max-width: 360px) {
-    .brand {
-        margin-left: 0px;
-    }
-
-    .flex-information {
-        margin-right: 0px;
-    }
-
-    .flex {
-        justify-content: center;
-    }
-}
-
-@media screen and (max-width: 360px) {
     .user {
         display: none;
     }
