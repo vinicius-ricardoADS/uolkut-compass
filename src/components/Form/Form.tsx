@@ -248,17 +248,15 @@ const Form = () => {
                                 </div>
                             </div>
                             <div className={classes['input-container']}>
-                                <div className={classes['label-float']}>
-                                    <select className={errors.invalidRelationship ? classes['invalid-input-select'] : classes['input-select']} value={form.selected} onChange={e => setForm((prevState) => ({
+                                <select className={errors.invalidRelationship ? classes['invalid-input-select'] : classes['input-select']} value={form.selected} onChange={e => setForm((prevState) => ({
                                         ...prevState,
                                         selected: e.target.value
-                                    }))} name="relationship">
-                                        <option value="Relacionamento">Relacionamento</option>
-                                        <option value="Solteiro">Solteiro</option>
-                                        <option value="Casado">Casado</option>
-                                        <option value="Viúvo">Viúvo</option>
-                                    </select>
-                                </div>
+                                }))} name="relationship">
+                                    <option value="Relacionamento">Relacionamento</option>
+                                    <option value="Solteiro">Solteiro</option>
+                                    <option value="Casado">Casado</option>
+                                    <option value="Viúvo">Viúvo</option>
+                                </select>
                             </div>
                             <div className={classes['flex-button-register']}>
                                 <button className={classes['btn-signup']}>

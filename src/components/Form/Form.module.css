@@ -70,8 +70,9 @@
 }
 
 .input-select {
-    width: 355px;
-    height: 51px;
+    width: 172px;
+    margin-left: 182px;
+    height: 42px;
     outline: none;
     border-style: none;
     border-radius: 8px;
@@ -145,6 +146,15 @@
     line-height: 19px;
     letter-spacing: 0px;
     text-align: left;
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url(../../assets/CaretDown.png) no-repeat center right #FFF;
+    font-size: 15px;
+    padding-right: 20px;
 }
 
 .form {
