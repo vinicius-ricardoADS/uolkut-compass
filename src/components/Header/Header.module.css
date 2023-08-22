@@ -1,0 +1,220 @@
+.header {
+    min-width: 100%;
+    height: 92px;
+    background-color: #FDFEFF;
+    position: fixed;
+    top: 0;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    margin-top: 24px;
+    margin-left: 352px;
+}
+
+.brand-profile {
+    margin-top: 24px;
+}
+
+.flex-information {
+    display: flex;
+    margin-top: 28px;
+    margin-right: 200px;
+}
+
+.flex-info-profile {
+    display: flex;
+    margin-top: 28px;
+}
+
+.flex-profile {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.information {
+    font-family: Roboto Flex;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0px;
+    margin-left: 35px;
+    text-align: left;
+    color: #4B4B4B;
+}
+
+.information-profile {
+    font-family: Roboto Flex;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0px;
+    margin-left: 35px;
+    text-align: left;
+    color: #ED6D25;
+}
+
+.searchForm {
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  background: #eff3f8;
+  padding: 8px;
+  margin-top: 23px;
+}
+
+.searchInput {
+  border: none;
+  background: transparent;
+  padding: 4px;
+  margin-right: 8px;
+  width: 200px;
+  top: 15px;
+  margin-left: 26px;
+  outline: none;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    margin-top: 24px;
+    margin-inline-start: 40px;
+}
+  
+.userImg {
+    width: 40px;
+    height: 40px;
+    top: 25px;
+    left: 1418px;
+    border-radius: 80px;
+}
+  
+.user li {
+    padding-inline-end: 1rem;
+}
+  
+.user p {
+    white-space: nowrap;
+}
+
+.link {
+    font-family: Roboto Flex;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: left;
+    color: #4B4B4B;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+@keyframes shrinkBrand {
+    to {
+      margin-left: 20px; /* Ajuste o valor para a posição final desejada */
+    }
+}
+
+@media screen and (max-width: 1054px) {
+    .information-profile {
+        margin-left: 25px;
+    }
+
+    .information {
+        margin-left: 25px;
+    }
+}
+
+@media screen and (max-width: 1005px) {
+    .information-profile {
+        margin-left: 18px;
+    }
+
+    .information {
+        margin-left: 18px;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .information-profile {
+        display: none;
+    }
+
+    .information {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 730px) {
+    .brand-profile {
+        margin-right: 15px;
+        margin-left: 10px;
+    }
+}
+
+@media screen and (max-width: 693px) {
+    .searchForm {
+        display: none;
+    }
+
+    .brand-profile {
+        margin-right: 0;
+        margin-left: 20px;
+    }
+
+    .flex-profile {
+        justify-content: space-between;
+    }
+
+    .user p {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .brand {
+        animation: shrinkBrand 1.5s ease-in-out forwards; /* Utilizamos 'forwards' para manter a posição final */
+    }
+
+    .flex-information {
+        margin-right: 0px;
+    }
+
+    .flex {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .brand {
+        margin-left: 0px;
+    }
+
+    .flex-information {
+        margin-right: 0px;
+    }
+
+    .flex {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .user {
+        display: none;
+    }
+
+    .flex-profile {
+        justify-content: center;
+    }
+}
