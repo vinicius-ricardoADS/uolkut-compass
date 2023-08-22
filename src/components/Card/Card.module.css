@@ -1,0 +1,46 @@
+.description {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.img {
+    width: 800px;
+    height: 598px;
+    border-radius: 16px;
+    background: linear-gradient(195.22deg, rgba(20, 20, 20, 0) 7.46%, #141414 69.4%);
+    margin-right: 32px;
+}
+
+.container-img {
+    position: relative;
+}
+
+.middle {
+    position: absolute;
+    top: 83%;
+    width: 617px;
+    left: 4%;
+    z-index: 1;
+}
+  
+@media screen and (max-width: 1225px) {
+    .img {
+        width: calc(100% - 20px);
+    }
+}
+
+@media screen and (max-width: 1028px) {
+    .container-img {
+      display:  none;
+    }
+}
+
+@media screen and (max-width: 1239px) {
+    .container-img {
+        margin-left: 20px;
+    }
+}

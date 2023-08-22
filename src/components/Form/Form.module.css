@@ -1,0 +1,296 @@
+.container-form {
+    width: 384px;
+    display: flex;
+    height: 598px;
+    border-radius: 16px;
+    background-color: #FDFEFF;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.img-orkut {
+    height: 32px;
+    width: 32px;
+}
+
+.input-container {
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.title {
+    color: #ED6D25;
+    font-family: SF Pro Display;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    margin-top: 13px;
+    line-height: normal;
+}
+
+.input {
+    width: 336px;
+    height: 51px;
+    outline: none;
+    border-style: none;
+    border-radius: 8px;
+    background-color: #EFF3F8;
+    font-family: Roboto Flex;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0px;
+    text-align: left;
+    padding-left: 12px;
+}
+
+.input:focus {
+    box-shadow: none;
+}
+
+.label-float label{
+    pointer-events: none;
+    position: absolute;
+    margin-left: 15px;
+    top: 0;
+    left: 0;
+    margin-top: 15px;
+    transition: all .3s ease-out;
+}
+
+.label-float input:focus + label,
+.label-float input:not(:placeholder-shown) + label{
+  font-size: 13px;
+  margin-top: 0;
+  border-color: none;
+}
+
+.description-input {
+    width: 44px;
+    height: 19px;
+    font-family: Inter;
+    color: #868686;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+
+.form {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-form {
+    text-align: center;
+}
+
+.password-flex {
+    display: flex;
+    align-items: center;
+    margin-right: 50%;
+}
+
+.password-flex .checkmark {
+    display: block;
+    background-color: #ED6D25;
+}
+
+.flex-button {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 55px;
+    gap: 10px;
+}
+
+.btn-signin {
+    height: 46px;
+    width: 336px;
+    border-radius: 8px;
+    border-style: none;
+    background-color: #ED6D25;
+    padding: 8px 84px 11px 84px;
+}
+
+.signin-description {
+    width: 104px;
+    color: #FFFFFF;
+    height: 19px;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+
+.btn-signup {
+    height: 46px;
+    width: 336px;
+    border-radius: 8px;
+    border-style: none;
+    margin-top: 20px;
+    padding: 8px 84px 11px 84px;
+}
+
+.signup-description {
+    color: #ED6D25;
+    width: 110px;
+    height: 19px;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+
+.anchor-password {
+    color: #ED6D25;
+    margin-top: 22px;
+}
+
+.validation {
+    opacity: 0.9;
+    height: 40px;
+    background-color: rgb(235, 112, 112);
+    border-radius: 6px;
+    text-align: center;
+    display: flex;
+    margin-top: 8px;
+    align-items: center;
+    justify-content: center;
+}
+
+.validation-message {
+    height: 19px;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+
+.invalid-input {
+    outline: none;
+    width: 336px;
+    height: 51px;
+    border-radius: 8px;
+    background-color: #EFF3F8;
+    border-color: red;
+}
+
+.invalid-input:focus {
+    box-shadow: none;
+}
+
+.errors {
+    color: red;
+    height: 19px;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+    letter-spacing: 0px;
+    text-align: left;
+    margin-top: 5px;
+}
+
+.checkbox input {
+    height: 0;
+    width: 0;
+}
+
+.checkbox {
+    width: 145px;
+    height: 19px;
+    color: #868686;
+    padding-left: 30px;
+    display: block;
+    position: relative;
+    user-select: none;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+
+.checkmarkPassword {
+    position: absolute;
+    top: 0;
+    left: 7px;
+    height: 14px;
+    width: 14px;
+    border-radius: 4px;
+    background-color: #dedbdb;
+    border: 1px solid #c9c9c9;
+}
+
+.checkbox input:checked ~ .checkmarkPassword {
+  background-color: #ED6D25;
+  ;
+}
+
+@media screen and (max-width: 1239px) {
+    .btn-signin {
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+
+    .btn-signup {
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+
+    .input {
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+
+    .description-input {
+        padding-left: 10px;
+    }
+}
+
+@media screen and (max-width: 1179px) {
+    .container-form {
+        margin-right: 20px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .container-form {
+        width: 320px;
+        height: 544px;
+        margin-right: 0px;
+        margin-top: 13%;
+    }
+
+    .input {
+        width: 280px;
+    }
+
+    .invalid-input {
+        width: 280px;
+    }
+
+    .password-flex {
+        margin-right: 33%;
+    }
+
+    .btn-signin {
+        width: 280px;
+    }
+
+    .btn-signup {
+        width: 280px;
+    }
+}
