@@ -1,14 +1,18 @@
 import classes from './Form.module.css';
 import orkut from '../../assets/ps_orkut (1).png';
 import { useNavigate } from 'react-router-dom';
+import * as api from '../../services/api';
 
 import React, {useState} from 'react';
+import { User } from '../../types/User';
 
 const Form = () => {
 
     const navigate = useNavigate();
 
-      const [form, setForm] = useState({
+    const [modal, setModal] = useState('none');
+
+    const [form, setForm] = useState({
         email: '',
         emailRegister: '',
         passwordRegister: '',
@@ -118,9 +122,8 @@ const Form = () => {
         }
     }
 
-    const submitHandler = (event: React.FormEvent<HTMLFormElement>) => {
+    const submitHandler = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        console.log(form);
         if (isRegister) {
             if (form.emailRegister.trim() === '' && form.passwordRegister.trim() === '' && form.date_birth.trim() === ''
             && form.profession.trim() === '' && form.country.trim() === '' && form.city.trim() === '' &&
@@ -143,9 +146,9 @@ const Form = () => {
             if (validateFormatEmailRegister()) {
                 setErrors({
                     invalidEmail: false,
-                    invalidEmailRegister: false,
+                    invalidEmailRegister: true,
                     invalidPassword: false,
-                    invalidFormatEmail: true,
+                    invalidFormatEmail: false,
                     invalidPasswordRegister: false,
                     invalidDateRegister: false,
                     invalidProfession: false,
@@ -155,6 +158,21 @@ const Form = () => {
                 });
                 return;
             }
+
+            const user: User = {
+                id: 2,
+                email: form.emailRegister,
+                password: form.passwordRegister,
+                date_birth: new Date(form.date_birth),
+                profession: form.profession,
+                country: form.country,
+                city: form.city,
+                relationship: form.selected
+            };
+
+            const response = await api.post(user);
+
+            if (response) setModal('block');
         }
         
         if (form.email.trim() === '' && form.password.trim() === '') {
@@ -194,6 +212,12 @@ const Form = () => {
 
     return (
         <>
+            <div id="myModal" className={classes.modal} style={{ display: modal }}>
+                <div className={classes['modal-content']}>
+                    <span onClick={() => setModal('none')} className={classes.close} id="closeModalBtn">&times;</span>
+                    <p style={{ color: '#ED6D25'}}>Cadastrado com sucesso</p>
+                </div>
+            </div>
             {isRegister ? (
                 <div className={classes['container-form']}>
                     <div className={classes['brand-form']}>

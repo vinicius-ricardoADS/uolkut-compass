@@ -1,12 +1,1 @@
-[
-    {
-        "id": 1,
-        "email": "vinicius@gmail.com",
-        "password": "1234",
-        "date_birth": "2002-04-03",
-        "profession": "Programmer",
-        "country": "Brazil",
-        "city": "São Paulo",
-        "relationship": "Solteiro"
-    }
-]
+[{"id":1,"email":"vinicius@gmail.com","password":"1234","date_birth":"2002-04-03","profession":"Programmer","country":"Brazil","city":"São Paulo","relationship":"Solteiro"},{"id":2,"email":"viniciusnoli2016@gmail.com","password":"1234","date_birth":"2002-04-03T00:00:00.000Z","profession":"Programador","country":"Brasil","city":"SÃO CARLOS","relationship":"Solteiro"}]
