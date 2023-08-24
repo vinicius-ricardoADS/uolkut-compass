@@ -1,10 +1,14 @@
 import classes from './Form.module.css';
 import orkut from '../../assets/ps_orkut (1).png';
 import { useNavigate } from 'react-router-dom';
+import '../../services/firebase';
+import Cookies from 'js-cookie';
 import * as api from '../../services/api';
 
 import React, {useState} from 'react';
 import { User } from '../../types/User';
+import { getAuth } from 'firebase/auth';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 
 const Form = () => {
 
@@ -160,7 +164,7 @@ const Form = () => {
             }
 
             const user: User = {
-                id: 2,
+                id: 3,
                 email: form.emailRegister,
                 password: form.passwordRegister,
                 date_birth: new Date(form.date_birth),
@@ -172,7 +176,19 @@ const Form = () => {
 
             const response = await api.post(user);
 
-            if (response) setModal('block');
+            if (response) {
+                setModal('block');
+
+                const userCredentials = await createUserWithEmailAndPassword(getAuth(), user.email, user.password);
+                
+                if (userCredentials.user) {
+                    const token = await userCredentials.user.getIdToken();
+    
+                    Cookies.set('token', token);
+
+                    navigate('/profiles');
+                }
+            }
         }
         
         if (form.email.trim() === '' && form.password.trim() === '') {
@@ -207,7 +223,26 @@ const Form = () => {
             return;
         }
 
-        navigate('/profile');
+        const users: User[] = await api.get();
+
+        const user = users.find((user) => {
+            return user.email === form.email && user.password === form.password;
+        });
+
+        if (user) {
+
+            const userCredentials = await signInWithEmailAndPassword(getAuth(), user.email, user.password);
+
+            if (userCredentials.user) {
+                const token = await userCredentials.user.getIdToken();
+
+                Cookies.set('token', token);
+
+                navigate('/profiles');
+            }
+        }
+
+        
     }
 
     return (
