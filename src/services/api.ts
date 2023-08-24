@@ -28,6 +28,17 @@ export const get = async () => {
     }
 }
 
+export const getUser = async (email: string) => {
+    try {
+        const response = await axios.get(`${baseUrl}?email=${email}`)
+        return response.data[0];
+    } catch (error) {
+        return {
+            message: error
+        }
+    }
+}
+
 export const put = async (userId: number, user: User) => {
     try {
         const response = await axios.put(`${baseUrl}/${userId}`, user, {

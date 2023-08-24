@@ -19,6 +19,7 @@ const Form = () => {
     const [form, setForm] = useState({
         email: '',
         emailRegister: '',
+        nameRegister: '',
         passwordRegister: '',
         password: '',
         ckPassword: '',
@@ -41,6 +42,7 @@ const Form = () => {
         invalidProfession: false,
         invalidCountry: false,
         invalidCity: false,
+        invalidNameRegister: false,
         invalidRelationship: false,
     })
 
@@ -76,6 +78,13 @@ const Form = () => {
                 setErrors((prevFormErros) => ({
                     ...prevFormErros,
                     invalidCity: false,
+                }));
+            }
+
+            if (name === 'nameRegister') {
+                setErrors((prevFormErros) => ({
+                    ...prevFormErros,
+                    invalidNameRegister: false,
                 }));
             }
         }
@@ -131,7 +140,7 @@ const Form = () => {
         if (isRegister) {
             if (form.emailRegister.trim() === '' && form.passwordRegister.trim() === '' && form.date_birth.trim() === ''
             && form.profession.trim() === '' && form.country.trim() === '' && form.city.trim() === '' &&
-                form.selected === 'Relacionamento') {
+                form.selected === 'Relacionamento' && form.nameRegister.trim() === '') {
                 setErrors({
                     invalidEmail: false,
                     invalidEmailRegister: true,
@@ -143,6 +152,7 @@ const Form = () => {
                     invalidCountry: true,
                     invalidCity: true,
                     invalidRelationship: true,
+                    invalidNameRegister: true,
                 });
                 return;
             }
@@ -159,12 +169,14 @@ const Form = () => {
                     invalidCountry: false,
                     invalidCity: false,
                     invalidRelationship: false,
+                    invalidNameRegister: false,
                 });
                 return;
             }
 
             const user: User = {
-                id: 3,
+                id: 4,
+                name: form.nameRegister,
                 email: form.emailRegister,
                 password: form.passwordRegister,
                 date_birth: new Date(form.date_birth),
@@ -203,6 +215,7 @@ const Form = () => {
                 invalidCountry: false,
                 invalidCity: false,
                 invalidRelationship: false,
+                invalidNameRegister: false,
             });
             return;
         }
@@ -219,6 +232,7 @@ const Form = () => {
                 invalidCountry: false,
                 invalidCity: false,
                 invalidRelationship: false,
+                invalidNameRegister: false,
             });
             return;
         }
@@ -306,7 +320,14 @@ const Form = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className={classes['input-container']}>
+                            <div className={classes['input-container-flex']}>
+                                <div>
+                                    <div className={classes['label-float']}>
+                                        <input onChange={handleChange} name='nameRegister' 
+                                            value={form.nameRegister} className={errors.invalidNameRegister ? classes['invalid-input-flex'] : classes['input-flex']}
+                                            type="text" placeholder="Nome"/>
+                                    </div>
+                                </div>
                                 <select className={errors.invalidRelationship ? classes['invalid-input-select'] : classes['input-select']} value={form.selected} onChange={e => setForm((prevState) => ({
                                         ...prevState,
                                         selected: e.target.value

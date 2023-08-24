@@ -16,8 +16,17 @@
   background-color: transparent;
   border-radius: 50%;
   margin-top: 20px;
-  background-image: url(../../assets/gabriel.png);
   background-size: cover;
+}
+
+.__divProfilePhotoImg {
+  text-align: center;
+}
+
+.img {
+  border-radius: 50%;
+  height: 184px;
+  width: 184px;
 }
 
 .__divProfile h4 {

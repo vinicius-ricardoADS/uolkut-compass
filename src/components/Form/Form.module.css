@@ -23,6 +23,7 @@
     position: relative;
     margin-bottom: 24px;
     display: flex;
+    align-items: center;
 }
 
 .title {
@@ -71,8 +72,7 @@
 
 .input-select {
     width: 172px;
-    margin-left: 182px;
-    height: 42px;
+    height: 48px;
     outline: none;
     border-style: none;
     border-radius: 8px;
