@@ -122,7 +122,11 @@ input[type="file"] {
     top: 184px;
     left: 118px;
     border-radius: 100px;
-    border: 3px solid #ed2590;
+  }
+
+  .img {
+    height: 122px;
+    width: 120px;
   }
 
   .__divProfile h4 {

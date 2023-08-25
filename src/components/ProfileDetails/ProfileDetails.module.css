@@ -132,12 +132,24 @@
 
 @media screen and (max-width: 950px) {
   .__divContainer {
-    width: 274px;
+    width: 216px;
+    margin-top: 33px;
+    margin-left: 23px;
+  }
+
+  .p {
+    margin-right: 12px;
   }
 }
 
 @media (max-width: 360px) {
   .__divPreferences span:not(.word):not(.verTodos) {
     display: none; 
+  }
+
+  .__divContainer {
+    width: 271px;
+    margin-top: 0;
+    margin-left: 0;
   }
 }

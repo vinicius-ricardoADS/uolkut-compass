@@ -19,6 +19,13 @@ a {
   letter-spacing: 0px;
 }
 
+@media screen and (max-width: 950px) {
+  .__divEditProfile {
+    width: 93%;
+    margin-left: 9px;
+  }
+}
+
 @media (max-width: 360px) {
   .__divEditProfile {
     width: 320px;

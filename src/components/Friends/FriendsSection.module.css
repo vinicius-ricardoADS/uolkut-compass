@@ -72,14 +72,16 @@
 @media screen and (max-width: 950px) {
   .container {
     margin-left: 12px;
-    margin-right: 30px;
+    margin-right: 14px;
+    width: 263px;
+    margin-top: 30px;
   }
 }
 
 @media (max-width: 360px) {
   .container {
     width: 318px;
-    margin-left: 30px;
+    margin-left: 15px;
     margin-top: 32px;
   }
 }
