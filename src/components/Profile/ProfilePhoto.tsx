@@ -2,12 +2,13 @@ import'./ProfilePhoto.module.css'
 import classes from './ProfilePhoto.module.css'
 import gabriel from '../../assets/gabriel.png'
 import ModeEdit from '../../assets/Mode edit.png';
-import { User } from '../../types/User';
+import { UserType } from '../../types/User';
 import { useState } from 'react';
 import * as api from '../../services/api';
+import { LucideUser } from 'lucide-react';
 
 type PropsProfilePhoto = {
-    user: User;
+    user: UserType;
     edit: boolean;
 }
 
@@ -47,7 +48,7 @@ function ProfilePhoto({ user, edit }: PropsProfilePhoto) {
                     <div className={classes.__divProfilePhotoEdit}>
                         <div className={classes.__divProfilePhotoImg}>
                             <div className={classes['image-container']}>
-                                <img src={existImage ? selectedImage! : ''} alt="" className={classes.img} />
+                                {existImage ? (<img src={existImage ? selectedImage! : ''} alt="" className={classes.img} />) : (<LucideUser className={classes.img}/>)}
                                 <label htmlFor="image-input" className={classes['edit-icon']}>
                                     <img src={ModeEdit} alt="Editar" />
                                 </label>

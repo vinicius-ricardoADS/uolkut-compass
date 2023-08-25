@@ -6,7 +6,7 @@ import Cookies from 'js-cookie';
 import * as api from '../../services/api';
 
 import React, {useState} from 'react';
-import { User } from '../../types/User';
+import { UserType } from '../../types/User';
 import { getAuth } from 'firebase/auth';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 
@@ -174,10 +174,10 @@ const Form = () => {
                 return;
             }
 
-            const users: User[] = await api.get();
+            const users: UserType[] = await api.get();
 
 
-            const user: User = {
+            const user: UserType = {
                 id: users.length,
                 name: form.nameRegister,
                 email: form.emailRegister,
@@ -241,7 +241,7 @@ const Form = () => {
             return;
         }
 
-        const users: User[] = await api.get();
+        const users: UserType[] = await api.get();
 
         const user = users.find((user) => {
             return user.email === form.email && user.password === form.password;

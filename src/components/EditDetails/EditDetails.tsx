@@ -1,11 +1,11 @@
-import { User } from '../../types/User';
+import { UserType } from '../../types/User';
 import { useState } from 'react';
 import classes from './EditDetails.module.css';
 import * as api from '../../services/api';
 import { useNavigate } from 'react-router-dom';
 
 type PropsEditDetails = {
-    user: User;
+    user: UserType;
 }
 
 const EditDetails = ({ user }: PropsEditDetails) => {
@@ -43,7 +43,7 @@ const EditDetails = ({ user }: PropsEditDetails) => {
             }
         }
 
-        const userEdit: User = {
+        const userEdit: UserType = {
             id: user!.id,
             name: form.name === '' ? user!.name : form.name,
             email: user!.email,

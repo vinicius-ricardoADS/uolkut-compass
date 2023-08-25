@@ -7,7 +7,7 @@ import jwtDecode from "jwt-decode";
 import ProfilePhoto from "../../components/Profile/ProfilePhoto";
 
 import classes from './EditPage.module.css';
-import { User } from "../../types/User";
+import { UserType} from "../../types/User";
 import EditDetails from "../../components/EditDetails/EditDetails";
 
 type JwtEmailDecoded = {
@@ -15,7 +15,7 @@ type JwtEmailDecoded = {
 }
 
 const EditPage = () => {
-    const [user, setUser] = useState<User | null>(null);
+    const [user, setUser] = useState<UserType | null>(null);
 
     const token = Cookies.get('token');
 

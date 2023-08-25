@@ -1,12 +1,12 @@
 import axios from "axios";
-import { User } from "../types/User";
+import { UserType } from "../types/User";
 import Cookies from "js-cookie";
 
 const baseUrl = "http://localhost:5173/api/users";
 
 const token = Cookies.get('token');
 
-export const post = async (user: User) => {
+export const post = async (user: UserType) => {
     try {
         const response = await axios.post(baseUrl, user);
         return response.status;
@@ -39,7 +39,7 @@ export const getUser = async (email: string) => {
     }
 }
 
-export const put = async (userId: number, user: User) => {
+export const put = async (userId: number, user: UserType) => {
     try {
         const response = await axios.put(`${baseUrl}/${userId}`, user, {
             headers: {

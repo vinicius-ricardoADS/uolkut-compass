@@ -10,7 +10,7 @@ import { useState, useEffect } from 'react';
 import Cookies from 'js-cookie';
 import jwtDecode from 'jwt-decode';
 import * as api from '../../services/api';
-import { User } from '../../types/User';
+import { UserType } from '../../types/User';
 
 type JwtEmailDecoded = {
     email: string;
@@ -18,7 +18,7 @@ type JwtEmailDecoded = {
 
 function ProfilePage() {
     const [windowSize, setWindowSize] = useState(false);
-    const [user, setUser] = useState<User | null>(null);
+    const [user, setUser] = useState<UserType | null>(null);
 
     const token = Cookies.get('token');
 
