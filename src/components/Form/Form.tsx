@@ -197,9 +197,9 @@ const Form = () => {
                     const token = await userCredentials.user.getIdToken();
     
                     Cookies.set('token', token);
-
-                    navigate('/profiles');
                 }
+
+                navigate('/profiles');
             }
         }
         
@@ -251,9 +251,9 @@ const Form = () => {
                 const token = await userCredentials.user.getIdToken();
 
                 Cookies.set('token', token);
-
-                navigate('/profiles');
             }
+
+            navigate('/profiles');
         }
 
         

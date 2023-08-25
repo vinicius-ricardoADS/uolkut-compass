@@ -49,8 +49,6 @@ function ProfilePage() {
         };
     }, [token]);
 
-    console.log(user);
-
     return(
         <> 
             <Header home={false}/>
@@ -64,7 +62,7 @@ function ProfilePage() {
                     <FriendsSection />
                     
                     <div className={classes.social}>
-                        <ProfileDetails />
+                        <ProfileDetails user={user!} />
                         <CommunitySection />
                     </div>
                 </div>
@@ -75,7 +73,7 @@ function ProfilePage() {
                         <EditProfile />
                     </div>
 
-                    <ProfileDetails />
+                    <ProfileDetails user={user!} />
 
                     <div className={classes.social}>
                         <FriendsSection />
