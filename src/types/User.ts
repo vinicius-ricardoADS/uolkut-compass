@@ -8,4 +8,5 @@ export interface User {
     country: string;
     city: string;
     relationship: string;
+    image_url: string;
 }

@@ -1,0 +1,6 @@
+.content {
+    padding: 80px 20px;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 110px;
+}

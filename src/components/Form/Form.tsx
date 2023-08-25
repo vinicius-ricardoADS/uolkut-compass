@@ -183,7 +183,8 @@ const Form = () => {
                 profession: form.profession,
                 country: form.country,
                 city: form.city,
-                relationship: form.selected
+                relationship: form.selected,
+                image_url: ""
             };
 
             const response = await api.post(user);

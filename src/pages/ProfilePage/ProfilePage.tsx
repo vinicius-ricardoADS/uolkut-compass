@@ -22,11 +22,6 @@ function ProfilePage() {
 
     const token = Cookies.get('token');
 
-    if (token) {
-        const decodedToken: JwtEmailDecoded = jwtDecode(token);
-        console.log(decodedToken.email);
-    }
-
     const handleResize = () => {
         setWindowSize(window.innerWidth < 950);
     };
@@ -55,7 +50,7 @@ function ProfilePage() {
             {windowSize ? (
                 <div className={classes.content}>
                     <div className={classes.profile}>
-                        <ProfilePhoto user={user!} />
+                        <ProfilePhoto user={user!} edit={false} />
                         <EditProfile />
                     </div>
 
@@ -69,7 +64,7 @@ function ProfilePage() {
             ) : (
                 <div className={classes.content}>
                     <div className={classes.profile}>
-                        <ProfilePhoto user={user!} />
+                        <ProfilePhoto user={user!} edit={false} />
                         <EditProfile />
                     </div>
 
