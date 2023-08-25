@@ -5,7 +5,7 @@ function EditProfile() {
     return(
         <>
             <div className={classes.__divEditProfile}>
-                <h4><a href="/edit">Editar meu perfil</a></h4>
+                <h4><a className={classes.edit} href="/edit">Editar meu perfil</a></h4>
             </div>
         </>
     )
