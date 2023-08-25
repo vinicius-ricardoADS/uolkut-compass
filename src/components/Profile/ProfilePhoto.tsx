@@ -1,6 +1,5 @@
 import'./ProfilePhoto.module.css'
 import classes from './ProfilePhoto.module.css'
-import gabriel from '../../assets/gabriel.png'
 import ModeEdit from '../../assets/Mode edit.png';
 import { UserType } from '../../types/User';
 import { useState } from 'react';
@@ -61,7 +60,7 @@ function ProfilePhoto({ user, edit }: PropsProfilePhoto) {
                 <div className={classes.__divProfile}>
                     <div className={classes.__divProfilePhoto}>
                         <div className={classes.__divProfilePhotoImg}>
-                            <img src={gabriel} alt="" className={classes.img} />
+                            {existImage ? (<img src={existImage ? selectedImage! : ''} alt="" className={classes.img} />) : (<LucideUser className={classes.img}/>)}
                         </div>
                     </div>
                     <h4>{user?.name}</h4>
