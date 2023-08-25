@@ -8,6 +8,7 @@ import ProfilePhoto from "../../components/Profile/ProfilePhoto";
 
 import classes from './EditPage.module.css';
 import { User } from "../../types/User";
+import EditDetails from "../../components/EditDetails/EditDetails";
 
 type JwtEmailDecoded = {
     email: string;
@@ -34,6 +35,7 @@ const EditPage = () => {
             <Header home={false} />
             <div className={classes.content}>
                 <ProfilePhoto user={user!} edit={true}/>
+                <EditDetails user={user!} />;
             </div>
             <Footer />
         </>

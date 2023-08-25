@@ -275,7 +275,7 @@ const Form = () => {
                             <h3 className={classes.title}>Cadastre-se no UOLkut</h3>
                     </div>
                     <form className={classes.form} onSubmit={submitHandler}>
-                        <div className={classes['input-container']}>
+                            <div className={classes['input-container']}>
                                 <div className={classes['label-float']}>
                                     <input onChange={handleChange} name='emailRegister'
                                         value={form.emailRegister} className={errors.invalidEmailRegister ? classes['invalid-input'] : classes['input-register']} 
@@ -387,7 +387,7 @@ const Form = () => {
                                 </label>
                             </div>
                             <div className={classes['flex-button']}>
-                                <button className={classes['btn-signin']} onClick={() => setIsRegister(false)}>
+                                <button className={classes['btn-signin']}>
                                     <span className={classes['signin-description']}>
                                         Entrar na conta
                                     </span>

@@ -1,0 +1,138 @@
+.container {
+    width: 592px;
+    height: 604px;
+    border-radius: 16px;
+    background-color: #FDFEFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form {
+    padding-top: 50px;
+}
+
+.title  {
+    font-family: Roboto Flex;
+    padding-top: 30px;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 42px;
+    letter-spacing: 3px;
+    text-align: left;
+    color: #ED6D25;
+}
+
+.label-float label{
+    pointer-events: none;
+    position: absolute;
+    margin-left: 15px;
+    top: 0;
+    left: 0;
+    margin-top: 15px;
+    transition: all .3s ease-out;
+}
+
+.label-float input:focus + label,
+.label-float input:not(:placeholder-shown) + label{
+  font-size: 13px;
+  margin-top: 0;
+  border-color: none;
+}
+
+.input-flex {
+    width: 240px;
+    height: 49px;
+    outline: none;
+    margin: 5px;
+    border-style: none;
+    border-radius: 8px;
+    background-color: #EFF3F8;
+    font-family: Roboto Flex;
+    font-size: 16px;
+    color: #868686;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0px;
+    text-align: left;
+    padding-left: 12px;
+}
+
+.input-container-flex {
+    position: relative;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.invalid-input-flex {
+    outline: none;
+    width: 162px;
+    height: 51px;
+    margin: 5px;
+    border-radius: 8px;
+    background-color: #EFF3F8;
+    border-color: red;
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url(../../assets/CaretDown.png) no-repeat center right #FFF;
+    font-size: 15px;
+    padding-right: 20px;
+}
+
+.invalid-input-select {
+    outline: none;
+    width: 341px;
+    height: 51px;
+    margin: 5px;
+    border-radius: 8px;
+    background-color: #EFF3F8;
+    border-color: red;
+}
+
+.input-select {
+    width: 252px;
+    height: 48px;
+    outline: none;
+    border-style: none;
+    border-radius: 8px;
+    background-color: #EFF3F8;
+    color: #868686;
+    font-family: Roboto Flex;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0px;
+    text-align: left;
+    padding-left: 12px;
+}
+
+.btn-signin {
+    height: 46px;
+    width: 336px;
+    border-radius: 8px;
+    border-style: none;
+    background-color: #ED6D25;
+    padding: 8px 84px 11px 84px;
+}
+
+.signin-description {
+    width: 104px;
+    color: #FFFFFF;
+    font-family: Roboto Flex;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
