@@ -174,8 +174,11 @@ const Form = () => {
                 return;
             }
 
+            const users: User[] = await api.get();
+
+
             const user: User = {
-                id: 4,
+                id: users.length,
                 name: form.nameRegister,
                 email: form.emailRegister,
                 password: form.passwordRegister,

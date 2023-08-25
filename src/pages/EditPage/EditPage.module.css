@@ -4,3 +4,10 @@
     justify-content: space-evenly;
     margin-top: 110px;
 }
+
+@media screen and (max-width: 794px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+}

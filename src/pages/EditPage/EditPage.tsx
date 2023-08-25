@@ -35,7 +35,7 @@ const EditPage = () => {
             <Header home={false} />
             <div className={classes.content}>
                 <ProfilePhoto user={user!} edit={true}/>
-                <EditDetails user={user!} />;
+                <EditDetails user={user!} />
             </div>
             <Footer />
         </>

@@ -1,97 +1,30 @@
 import { User } from '../../types/User';
 import { useState } from 'react';
 import classes from './EditDetails.module.css';
+import * as api from '../../services/api';
+import { useNavigate } from 'react-router-dom';
 
 type PropsEditDetails = {
     user: User;
 }
 
 const EditDetails = ({ user }: PropsEditDetails) => {
+    const navigate = useNavigate();
+
     const [ form, setForm ] = useState({
-        profession: user?.profession,
-        name: user?.name,
-        ciy: user?.city,
-        country: user?.country,
-        birth_date: user?.date_birth,
+        profession: '',
+        name: '',
+        city: '',
+        country: '',
+        birth_date: '',
         password: '',
         repeat_password: '',
-        relationship: user?.relationship,
-    });
-
-    const [ errors, setErrors ] = useState({
-        invalidProfession: false,
-        invalidName: false,
-        invalidCity: false,
-        invalidCountry: false,
-        invalidBirthDate: false,
-        invalidRelationship: false,
-        invalidPassword: false,
-        invalidRepeatPassword: false,
+        relationship: 'Relacionamento',
     });
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value, type, checked } = event.target;
         const fieldValue = type === 'checkbox' ? checked : value;
-
-        if (type === 'text') {
-            if (name === 'emailRegister') {
-                setErrors((prevFormErros) => ({
-                    ...prevFormErros,
-                    invalidFormatEmail: false,
-                    invalidEmailRegister: false,
-                }));
-            }
-            
-            if (name === 'profession') {
-                setErrors((prevFormErros) => ({
-                    ...prevFormErros,
-                    invalidProfession: false,
-                }));
-            }
-            
-            if (name === 'country') {
-                setErrors((prevFormErros) => ({
-                    ...prevFormErros,
-                    invalidCountry: false,
-                }));
-            }
-
-            if (name === 'city') {
-                setErrors((prevFormErros) => ({
-                    ...prevFormErros,
-                    invalidCity: false,
-                }));
-            }
-
-            if (name === 'nameRegister') {
-                setErrors((prevFormErros) => ({
-                    ...prevFormErros,
-                    invalidNameRegister: false,
-                }));
-            }
-        }
-
-        if (type === 'password') {
-            setErrors((prevFormErros) => ({
-                ...prevFormErros,
-                invalidPassword: false,
-                invalidPasswordRegister: false
-            }))
-        }
-
-        if (type === 'date') {
-            setErrors((prevFormErros) => ({
-                ...prevFormErros,
-                invalidDateRegister: false
-            }))
-        }
-
-        if (form.relationship !== 'Relacionamento') {
-            setErrors((prevFormErros) => ({
-                ...prevFormErros,
-                invalidRelationship: false,
-            }))
-        }
 
         setForm((prevFormData) => ({
             ...prevFormData,
@@ -99,23 +32,54 @@ const EditDetails = ({ user }: PropsEditDetails) => {
         }));
     }
 
+    const submitHandler = async (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+
+        if (form.password.trim() !== '' && form.repeat_password.trim() !== '') {
+            if (form.password !== form.repeat_password) {
+                return {
+                    message: 'Error => password unequal'
+                }
+            }
+        }
+
+        const userEdit: User = {
+            id: user!.id,
+            name: form.name === '' ? user!.name : form.name,
+            email: user!.email,
+            password: form.password === '' ? user!.password : form.password,
+            date_birth: form.birth_date === '' ? user!.date_birth : new Date(form.birth_date),
+            profession: form.profession === '' ? user!.profession : form.profession,
+            country: form.country === '' ? user!.country : form.country,
+            city: form.city === '' ? user!.city : form.city,
+            relationship: form.relationship === '' ? user!.relationship : form.relationship,
+            image_url: ""
+        };
+
+        const response = await api.put(userEdit.id, userEdit);
+
+        if (response) {
+            navigate('/profiles');
+        } 
+    }
+
     return (
         <>
             <div className={classes.container}>
                 <h1 className={classes.title}>Editar informações</h1>
-                <form className={classes.form}>
+                <form onSubmit={submitHandler} className={classes.form}>
                     <div className={classes['input-container-flex']}>
                         <div>
                             <div className={classes['label-float']}>
                                 <input onChange={handleChange} name='profession' 
-                                    defaultValue={form.profession} className={errors.invalidProfession ? classes['invalid-input-flex'] : classes['input-flex']}
+                                    defaultValue={form.profession} className={classes['input-flex']}
                                     type="text" placeholder="Profissão"/>
                             </div>
                         </div>
                         <div>
                             <div className={classes['label-float']}>
                                 <input onChange={handleChange} name='name' 
-                                    defaultValue={form.name} className={errors.invalidName ? classes['invalid-input-flex'] : classes['input-flex']}
+                                    defaultValue={form.name} className={classes['input-flex']}
                                     type="text" placeholder="Nome"/>
                             </div>
                         </div>
@@ -124,14 +88,14 @@ const EditDetails = ({ user }: PropsEditDetails) => {
                         <div>
                             <div className={classes['label-float']}>
                                 <input onChange={handleChange} name='city' 
-                                    defaultValue={form.ciy} className={errors.invalidCity ? classes['invalid-input-flex'] : classes['input-flex']}
+                                    defaultValue={form.city} className={classes['input-flex']}
                                     type="text" placeholder="Cidade"/>
                             </div>
                         </div>
                         <div>
                             <div className={classes['label-float']}>
                                 <input onChange={handleChange} name='country' 
-                                    defaultValue={form.country} className={errors.invalidCountry ? classes['invalid-input-flex'] : classes['input-flex']}
+                                    defaultValue={form.country} className={classes['input-flex']}
                                     type="text" placeholder="País"/>
                             </div>
                         </div>
@@ -140,12 +104,12 @@ const EditDetails = ({ user }: PropsEditDetails) => {
                         <div>
                             <div className={classes['label-float']}>
                                 <input onChange={handleChange} name='birth_date' 
-                                    defaultValue={new Date(form.birth_date).toDateString()} className={errors.invalidBirthDate ? classes['invalid-input-flex'] : classes['input-flex']}
+                                    defaultValue={form.birth_date} className={classes['input-flex']}
                                     type="date" placeholder="Cidade"/>
                             </div>
                         </div>
                         <div>
-                            <select className={errors.invalidRelationship ? classes['invalid-input-select'] : classes['input-select']} defaultValue={user?.relationship} onChange={e => setForm((prevState) => ({
+                            <select className={classes['input-select']} defaultValue={user?.relationship} onChange={e => setForm((prevState) => ({
                                         ...prevState,
                                         relationship: e.target.value
                                 }))} name="relationship">
@@ -160,14 +124,14 @@ const EditDetails = ({ user }: PropsEditDetails) => {
                         <div>
                             <div className={classes['label-float']}>
                                 <input onChange={handleChange} name='password' 
-                                    defaultValue={form.password} className={errors.invalidPassword ? classes['invalid-input-flex'] : classes['input-flex']}
+                                    defaultValue={form.password} className={classes['input-flex']}
                                     type="password" placeholder="Senha"/>
                             </div>
                         </div>
                         <div>
                             <div className={classes['label-float']}>
-                                <input onChange={handleChange} name='repeate_password' 
-                                    defaultValue={form.repeat_password} className={errors.invalidRepeatPassword ? classes['invalid-input-flex'] : classes['input-flex']}
+                                <input onChange={handleChange} name='repeat_password' 
+                                    defaultValue={form.repeat_password} className={classes['input-flex']}
                                     type="password" placeholder="Repetie Senha"/>
                             </div>
                         </div>
