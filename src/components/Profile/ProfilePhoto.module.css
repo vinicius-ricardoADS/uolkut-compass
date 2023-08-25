@@ -123,8 +123,9 @@ input[type="file"] {
   }
 
   .img {
-    height: 122px;
-    width: 120px;
+    height: 121px;
+    width: 127px;
+    margin-top: 2.05px;
   }
 
   .__divProfile h4 {

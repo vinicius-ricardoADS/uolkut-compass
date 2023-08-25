@@ -408,6 +408,18 @@ select {
         margin-top: 13%;
     }
 
+    .input-register {
+        width: 272px;
+    }
+
+    .input-flex {
+        width: 127px;
+    }
+
+    .input-select {
+        width: 149px;
+    }
+
     .input {
         width: 280px;
     }
@@ -426,5 +438,9 @@ select {
 
     .btn-signup {
         width: 280px;
+    }
+
+    .container-form {
+        height: 586px;
     }
 }
