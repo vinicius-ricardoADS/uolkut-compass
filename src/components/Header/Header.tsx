@@ -26,10 +26,18 @@ const Header = ({ home }: HeaderProps) => {
                     <div className={classes['flex-profile']}>
                         <img src={brand} className={classes['brand-profile']} />
                         <ul className={classes["flex-info-profile"]}>
-                            <li className={classes.information}>Início</li>
-                            <li className={classes['information-profile']}>Perfil</li>
-                            <li className={classes.information}>Comunidades</li>
-                            <li className={classes.information}>Jogos</li>
+                            <li className={classes.information}>
+                                <a href='/'>Início</a>
+                            </li>
+                            <li >
+                                <a className={classes['information-profile']} href='/profiles'>Perfil</a>
+                            </li>
+                            <li className={classes.information}>
+                                <a href='#'>Comunidades</a>
+                            </li>
+                            <li className={classes.information}>
+                                <a href='#'>Jogos</a>
+                            </li>
                         </ul>
                     </div>
                     <div className={classes['flex-profile']}>

@@ -4,6 +4,7 @@
     background-color: #FDFEFF;
     position: fixed;
     top: 0;
+    z-index: 999;
 }
 
 .flex {
@@ -113,6 +114,10 @@
     text-align: left;
     color: #4B4B4B;
     text-decoration: none;
+}
+
+a:hover {
+    color: #ED6D25;
 }
 
 ul {

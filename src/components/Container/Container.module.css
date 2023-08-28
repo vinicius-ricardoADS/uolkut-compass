@@ -1,0 +1,22 @@
+.container  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 40px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+@media screen and (max-width: 360px) {
+    .container {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
+}
