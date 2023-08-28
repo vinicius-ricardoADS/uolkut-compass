@@ -364,12 +364,13 @@ select {
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 35%;
+    border-radius: 1rem;
 }
   
   /* Close button */
 .close {
-    color: #aaa;
+    color: orange;
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -380,6 +381,31 @@ select {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+.flex-modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.check {
+    border: 1px solid orange;
+    border-radius: 50%;
+    background-color: orange;
+    height: 27px;
+    width: 26px;
+}
+
+.check-message {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0px;
+    margin-top: 8px;
+    text-align: center;
 }
   
 
@@ -452,5 +478,14 @@ select {
 
     .btn-signin-register {
         width: 281px;
+    }
+
+    .modal {
+        display: flex;
+        align-items: center;
+    }
+
+    .modal-content {
+        width: 64%;
     }
 }
