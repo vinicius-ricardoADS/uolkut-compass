@@ -89,7 +89,7 @@
 
 .invalid-input-select {
     outline: none;
-    width: 341px;
+    width: 143px;
     height: 51px;
     margin: 5px;
     border-radius: 8px;
@@ -285,7 +285,7 @@ select {
 
 .invalid-input-flex {
     outline: none;
-    width: 162px;
+    width: 135px;
     height: 51px;
     margin: 5px;
     border-radius: 8px;

@@ -375,7 +375,7 @@ const Form = () => {
             const response = await api.post(user);
 
             if (response) {
-                setModal('block');
+                setModal('flex');
 
                 const userCredentials = await createUserWithEmailAndPassword(getAuth(), user.email, user.password);
                 
