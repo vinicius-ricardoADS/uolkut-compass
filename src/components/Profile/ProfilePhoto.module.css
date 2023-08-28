@@ -1,0 +1,142 @@
+.__divProfile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 255px;
+  height: 324px;
+  top: 172px;
+  border-radius: 16px;
+  background-color: white;
+}
+
+.__divProfilePhoto {
+  width: 184px;
+  height: 184px;
+  border: 5px solid #ED6D25;
+  background-color: transparent;
+  border-radius: 50%;
+  margin-top: 20px;
+  background-size: cover;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.edit-icon {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  cursor: pointer;
+  border: 3px solid #ED6D25;
+}
+
+.__divProfilePhotoEdit {
+  width: 184px;
+  height: 184px;
+  border: 5px solid #ED6D25;
+  background-color: transparent;
+  border-radius: 50%;
+  margin-top: 65px;
+  position: relative;
+  background-size: cover;
+}
+
+.__divProfilePhotoImg {
+  text-align: center;
+}
+
+.img {
+  border-radius: 50%;
+  height: 184px;
+  width: 184px;
+}
+
+.__divProfile h4 {
+  margin-top: 20px;
+  margin-bottom: 15px;
+  font-family: Roboto Flex;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #4B4B4B;
+  text-align: left;
+}
+
+.__divProfile h5 {
+  font-family: Roboto Flex;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #4B4B4B;
+}
+
+.divProfile {
+  display: flex;
+  width: 280px;
+  height: 56px;
+  top: 528px;
+  left: 352px;
+  border-radius: 16px;
+  align-items: center;
+  background-color: white;
+  justify-content: center;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 1310px) {
+  .__divProfile {
+    margin-right: 12px;
+  } 
+}
+
+@media screen and (max-width: 950px) {
+  .__divProfile {
+    margin-right: 12px;
+    margin-left: 12px;
+  } 
+}
+
+@media (max-width: 360px) {
+  .__divProfile {
+    width: 261px;
+    height: 300px;
+    border-radius: 16px;
+  }
+
+  .__divProfilePhoto {
+    width: 124px;
+    height: 124px;
+    top: 184px;
+    left: 118px;
+    border-radius: 100px;
+  }
+
+  .img {
+    height: 121px;
+    width: 127px;
+    margin-top: 2.05px;
+  }
+
+  .__divProfile h4 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 20px;
+  }
+
+  .__divProfile h5 {
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 0px;
+  }
+}

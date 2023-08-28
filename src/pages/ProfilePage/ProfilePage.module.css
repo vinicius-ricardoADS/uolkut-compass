@@ -1,0 +1,26 @@
+.content {
+  padding: 80px 20px;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 110px;
+}
+
+.profile,
+.social {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+@media screen and (max-width: 950px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .social {
+    margin-top: 40px;
+  }
+}

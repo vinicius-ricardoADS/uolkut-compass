@@ -4,6 +4,7 @@
     background-color: #FDFEFF;
     position: fixed;
     top: 0;
+    z-index: 999;
 }
 
 .flex {
@@ -115,6 +116,10 @@
     text-decoration: none;
 }
 
+a:hover {
+    color: #ED6D25;
+}
+
 ul {
     list-style: none;
 }
@@ -184,20 +189,6 @@ ul {
 @media screen and (max-width: 500px) {
     .brand {
         animation: shrinkBrand 1.5s ease-in-out forwards; /* Utilizamos 'forwards' para manter a posição final */
-    }
-
-    .flex-information {
-        margin-right: 0px;
-    }
-
-    .flex {
-        justify-content: center;
-    }
-}
-
-@media screen and (max-width: 360px) {
-    .brand {
-        margin-left: 0px;
     }
 
     .flex-information {
