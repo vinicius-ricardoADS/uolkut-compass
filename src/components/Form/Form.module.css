@@ -413,7 +413,7 @@ select {
 @media screen and (max-width: 420px) {
     .container-form {
         width: 320px;
-        height: 544px;
+        height: 626px;
         margin-right: 0px;
         margin-top: 13%;
     }
@@ -450,7 +450,7 @@ select {
         width: 280px;
     }
 
-    .container-form {
-        height: 586px;
+    .btn-signin-register {
+        width: 281px;
     }
 }

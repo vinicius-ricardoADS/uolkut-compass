@@ -52,7 +52,7 @@ const EditDetails = ({ user }: PropsEditDetails) => {
             profession: form.profession === '' ? user!.profession : form.profession,
             country: form.country === '' ? user!.country : form.country,
             city: form.city === '' ? user!.city : form.city,
-            relationship: form.relationship === '' ? user!.relationship : form.relationship,
+            relationship: form.relationship === 'Relacionamento' ? user!.relationship : form.relationship,
             image_url: ""
         };
 
