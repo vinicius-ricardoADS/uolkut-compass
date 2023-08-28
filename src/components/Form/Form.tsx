@@ -1,5 +1,6 @@
 import classes from './Form.module.css';
 import orkut from '../../assets/ps_orkut (1).png';
+import { CheckIcon } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import '../../services/firebase';
 import Cookies from 'js-cookie';
@@ -9,50 +10,15 @@ import React, {useState} from 'react';
 import { UserType } from '../../types/User';
 import { getAuth } from 'firebase/auth';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import { FormErrorsProps, FormProps, SetFormProps } from '../../utils/form';
 
 type PropsFormLoginOrRegister = {
     isRegister: boolean;
     onSubmit: React.FormEventHandler<HTMLFormElement>;
     onChange: React.ChangeEventHandler<HTMLInputElement>;
-    form: {
-        email: string;
-        emailRegister: string;
-        nameRegister: string;
-        passwordRegister: string;
-        password: string;
-        ckPassword: string;
-        date_birth: string;
-        profession: string;
-        country: string;
-        city: string;
-        selected: string;
-    }
-    errors: {
-        invalidEmail: boolean;
-        invalidEmailRegister: boolean;
-        invalidFormatEmail: boolean;
-        invalidPassword: boolean;
-        invalidPasswordRegister: boolean;
-        invalidDateRegister: boolean;
-        invalidProfession: boolean;
-        invalidCountry: boolean;
-        invalidCity: boolean;
-        invalidNameRegister: boolean;
-        invalidRelationship: boolean;
-    }
-    setForm: React.Dispatch<React.SetStateAction<{
-        email: string;
-        emailRegister: string;
-        nameRegister: string;
-        passwordRegister: string;
-        password: string;
-        ckPassword: string;
-        date_birth: string;
-        profession: string;
-        country: string;
-        city: string;
-        selected: string;
-    }>>
+    form: FormProps;
+    errors: FormErrorsProps;
+    setForm: React.Dispatch<React.SetStateAction<SetFormProps>>
     setIsRegister: React.Dispatch<React.SetStateAction<boolean>>;
     setRecoverPassword: React.Dispatch<React.SetStateAction<boolean>>;
 }
@@ -224,7 +190,7 @@ const Form = () => {
 
     const [recoverPassword, setRecoverPassword] = useState(false);
 
-    const [form, setForm] = useState({
+    const [form, setForm] = useState<FormProps>({
         email: '',
         emailRegister: '',
         nameRegister: '',
@@ -240,7 +206,7 @@ const Form = () => {
 
     const [isRegister, setIsRegister] = useState(false);
 
-    const [errors, setErrors] = useState({
+    const [errors, setErrors] = useState<FormErrorsProps>({
         invalidEmail: false,
         invalidEmailRegister: false,
         invalidFormatEmail: false,
@@ -483,7 +449,12 @@ const Form = () => {
             <div id="myModal" className={classes.modal} style={{ display: modal }}>
                 <div className={classes['modal-content']}>
                     <span onClick={() => setModal('none')} className={classes.close} id="closeModalBtn">&times;</span>
-                    <p style={{ color: '#ED6D25'}}>Cadastrado com sucesso</p>
+                    <div className={classes['flex-modal']}>
+                        <div className={classes.check}>
+                            <CheckIcon color='white' />
+                        </div>
+                        <p className={classes['check-message']} style={{ color: '#ED6D25'}}>Cadastrado com sucesso</p>
+                    </div>
                 </div>
             </div>
             {recoverPassword ? (
