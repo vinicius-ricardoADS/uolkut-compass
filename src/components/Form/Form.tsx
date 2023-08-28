@@ -59,6 +59,14 @@ const Form = () => {
                     invalidEmailRegister: false,
                 }));
             }
+
+            if (name === 'email') {
+                setErrors((prevFormErros) => ({
+                    ...prevFormErros,
+                    invalidFormatEmail: false,
+                    invalidEmail: false,
+                }));
+            }
             
             if (name === 'profession') {
                 setErrors((prevFormErros) => ({
@@ -201,9 +209,9 @@ const Form = () => {
                     const token = await userCredentials.user.getIdToken();
     
                     Cookies.set('token', token);
-                }
 
-                navigate('/profiles');
+                    navigate('/profiles');
+                }
             }
         }
         
@@ -255,9 +263,10 @@ const Form = () => {
                 const token = await userCredentials.user.getIdToken();
 
                 Cookies.set('token', token);
-            }
 
-            navigate('/profiles');
+                navigate('/profiles');
+            }
+            
         }
 
         
@@ -346,6 +355,13 @@ const Form = () => {
                                 <button className={classes['btn-signup']}>
                                     <span className={classes['signup-description']}>
                                         Criar uma conta
+                                    </span>
+                                </button>
+                            </div>
+                            <div className={classes['flex-button-register']}>
+                                <button className={classes['btn-signin-register']} onClick={() => setIsRegister(false)}>
+                                    <span className={classes['signin-description']}>
+                                        Entrar na conta
                                     </span>
                                 </button>
                             </div>

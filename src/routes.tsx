@@ -14,8 +14,8 @@ const router = createBrowserRouter(
     createRoutesFromElements(
         <Route>
             <Route path='/' element={<Home/>}/>
-            <Route path='/profiles' element={isAuthenticated() ? <ProfilePage /> : <Navigate to='/' />} />
-            <Route path='/edit' element={isAuthenticated() ? <EditPage /> : <Navigate to='/' />} />
+            <Route path='/profiles' element={setTimeout(() => { isAuthenticated( )}, 1000) ? <ProfilePage /> : <Navigate to='/' />} />
+            <Route path='/edit' element={setTimeout(() => { isAuthenticated( )}, 1000) ? <EditPage /> : <Navigate to='/' />} />
         </Route>
     )
 );

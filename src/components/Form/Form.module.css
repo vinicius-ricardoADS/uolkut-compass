@@ -204,6 +204,16 @@ select {
     padding: 8px 84px 11px 84px;
 }
 
+.btn-signin-register {
+    height: 46px;
+    width: 336px;
+    border-radius: 8px;
+    border-style: none;
+    background-color: #ED6D25;
+    margin-top: 5px;
+    padding: 8px 84px 11px 84px;
+}
+
 .signin-description {
     width: 104px;
     color: #FFFFFF;
